@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package lookup;
+
+option java_multiple_files = true;
+option java_package = "com.github.icecodesoftware.generated";
+option java_outer_classname = "LookupProto";
+
+// The greeting service definition.
+service LookupService {
+  // Lookup a key with the service
+  rpc get (stream Key) returns (stream Value) {}
+}
+
+// The request message containing the user's name.
+message Key {
+  string key = 1;
+}
+
+// The response message containing the greetings
+message Value {
+  string value = 1;
+}
